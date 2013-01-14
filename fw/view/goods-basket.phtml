@@ -1,0 +1,28 @@
+<?php $list = View::get('list')?>
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Наименование</th>
+        <th>Количество</th>
+        <th>Сумма</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    $summ = 0;
+    foreach ($list as $elem):
+    $summ += $elem['count']*$elem['price'];?>
+    <tr><td><?=$elem['id']?></td><td><?=$elem['title']?></td><td><?=$elem['count']?></td><td><?=($elem['count']*$elem['price'])?>,-</td></tr>
+        <?php endforeach?>
+    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><?=$summ?>,-</td></tr>
+    </tbody>
+</table>
+<form class="form-horizontal">
+    <div class="control-group">
+        <div class="controls">
+            <a href="#checkout" class="btn btn-primary">Перейти к оплате</a>
+            <a href="<?=SITE_LOC?>/goods" class="btn">Вернуться к покупкам</a>
+        </div>
+    </div>
+</form>

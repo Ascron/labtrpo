@@ -1,0 +1,32 @@
+<form class="form-horizontal" action="<?=SITE_LOC?>/admin/add/ajax" method="post">
+    <div class="control-group">
+        <label class="control-label" for="inputLogin">Логин</label>
+        <div class="controls">
+            <input type="text" id="inputLogin" name="login" placeholder="Логин">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputPassword">Пароль</label>
+        <div class="controls">
+            <input type="password" id="inputPassword" name="password" placeholder="Пароль">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="role">Роль</label>
+        <div class="controls">
+            <select name="role" id="role">
+                <option value="1">Заказчик</option>
+                <option value="2">Бухгалтер</option>
+                <option value="4">Директор</option>
+                <option value="8">Поставщик</option>
+                <option value="16">Кладовщик</option>
+                <option value="32">Администратор</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn">Добавить пользователя</button>
+        </div>
+    </div>
+</form>

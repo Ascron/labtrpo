@@ -1,0 +1,7 @@
+<div class="alert alert-success">
+    <?=View::get('message')?>
+</div>
+<a href="<?=SITE_LOC?>/goods" class="btn">Вернуться к списку товаров</a>
+<?php if (UserRights::isUser(User::getInstance())):?>
+<a href="<?=SITE_LOC?>/goods/basket" class="btn btn-primary">Перейти к оплате</a>
+<?php endif?>

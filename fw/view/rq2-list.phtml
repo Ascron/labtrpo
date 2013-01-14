@@ -1,0 +1,17 @@
+<?php $list = View::get('list')?>
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Наименование</th>
+        <th>Количество</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach ($list as $elem):?>
+        <tr><td><?=$elem['rid']?></td><td><?=$elem['title']?></td><td><?=$elem['count']?></td><td><a href="<?=SITE_LOC?>/requests/getr/<?=$elem['rid']?>" class="btn">Принять</a></td></tr>
+        <?php endforeach?>
+    </tbody>
+</table>

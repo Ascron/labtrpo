@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <title><?=View::get('title')?></title>
+    <link rel="stylesheet" type="text/css" href="<?=CSS_DIR?>/bootstrap.min.css" media="all">
+    <script src="<?=JS_DIR?>/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="<?=JS_DIR?>/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<?php View::getInstance()->render('head.phtml', false);?>
+
+<div class="container">
+    <div class="row" style="height: 100px;">
+        <div class="span9 offset1 page-header">
+            <h1><?=View::get('header')?></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3 offset1">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li class="nav-header">
+                        Навигация
+                    </li>
+                    <?php if (count(View::getInstance()->getController()->getSide())):
+                    $list = View::getInstance()->getController()->getSide();
+                    foreach ($list as $elem):?>
+                        <li<?=($elem['active'] ? ' class="activle"':'')?>><a href="<?=$elem['href']?>"><?=$elem['title']?></a></li>
+                    <?php endforeach;endif;?>
+                </ul>
+            </div>
+        </div>
+        <div class="span6">
+            <?php View::getInstance()->render(View::get('template'), false)?>
+        </div>
+    </div>
+</div>
+</body>
+</html>

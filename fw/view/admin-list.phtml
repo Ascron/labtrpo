@@ -1,0 +1,16 @@
+<?php $list = View::get('list')?>
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Логин</th>
+        <th>Роль</th>
+        <th>Опции</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($list as $elem):?>
+        <tr><td><?=$elem['uid']?></td><td><?=$elem['login']?></td><td><?=Role::getRoleByRights($elem['rights'])?></td><td><a href="<?=SITE_LOC?>/admin/list/<?=$elem['uid']?>/edit">Редактировать</a></td></tr>
+    <?php endforeach?>
+    </tbody>
+</table>
